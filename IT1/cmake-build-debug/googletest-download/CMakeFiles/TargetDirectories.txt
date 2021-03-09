@@ -1,3 +1,0 @@
-/home/ilyagu/Advanced_programming_C/IT1/cmake-build-debug/googletest-download/CMakeFiles/rebuild_cache.dir
-/home/ilyagu/Advanced_programming_C/IT1/cmake-build-debug/googletest-download/CMakeFiles/edit_cache.dir
-/home/ilyagu/Advanced_programming_C/IT1/cmake-build-debug/googletest-download/CMakeFiles/googletest.dir

@@ -1,1 +1,3 @@
+.gitignore
 .idea
+/IT1/cmake-build-debug/*

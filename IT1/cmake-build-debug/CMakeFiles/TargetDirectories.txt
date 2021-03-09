@@ -1,4 +1,0 @@
-/home/ilyagu/Advanced_programming_C/IT1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/ilyagu/Advanced_programming_C/IT1/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/ilyagu/Advanced_programming_C/IT1/cmake-build-debug/CMakeFiles/test.dir
-/home/ilyagu/Advanced_programming_C/IT1/cmake-build-debug/CMakeFiles/IT1.dir
