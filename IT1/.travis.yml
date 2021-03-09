@@ -1,0 +1,23 @@
+dist:     focal
+sudo:     required  # используем Virtual Machine (а не Docker container)
+
+language: c
+
+compiler:
+  - gcc
+
+install:
+  - sudo apt-get install valgrind
+  - sudo pip3 install cpplint
+
+script:
+  - cpplint --extensions=c include/*/* src/*
+  - cpplint --extensions=cpp test/*.cpp
+  - mkdir build && cd build
+  - cmake ..
+  - make clean && make
+  - valgrind --tool=memcheck --leak-check=full ./test/pars_str_tests
+  - valgrind --tool=memcheck --leak-check=full ./test/read_str_from_file_tests
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
