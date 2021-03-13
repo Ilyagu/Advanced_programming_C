@@ -18,7 +18,9 @@ TEST(find_quality, find_quality1) {
     ASSERT_EQ(200, find_quality("паылвралоыва"));
 }
 
+//
 // test decrypt
+//
 
 TEST(decrypt, decrypt1) {
     ASSERT_STREQ("Таких дорог нет", decrypt(0));
