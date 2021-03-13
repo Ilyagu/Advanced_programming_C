@@ -39,7 +39,7 @@
 # Debug files
 *.dSYM/
 .idea/
-IT1/cmake-build-debug/
+.IT1/cmake-build-debug/
 *.su
 *.idb
 *.pdb
