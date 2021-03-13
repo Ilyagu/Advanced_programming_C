@@ -13,7 +13,8 @@ install:
 script:
   - cpplint --extensions=c include/*/* src/*
   - cpplint --extensions=cpp test/*.cpp
-  - mkdir build && cd build
+  - cppcheck --inconclusive --enable=all --language=c src/*.c
+  - mkdir cmake-build-debug && cd cmake-build-debug
   - cmake ..
   - make clean && make
   - valgrind --tool=memcheck --leak-check=full ./test/pars_str_tests

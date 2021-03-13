@@ -1,10 +1,10 @@
 // Copyright 2021 Nagdimaev Ilyagu
 
-#include "main.h"
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#include "func/func.h"
 
 int main() {
     Road *all_roads = calloc(50, sizeof(Road));
@@ -16,17 +16,9 @@ int main() {
     input_lanes(&n);
     printf("%s\n", "Введите вид покрытия (Асфальт или Грунт):");
     char test_type[50];
-    while (1) {
-        scanf("%s", test_type);
-        if (strcmp(test_type, "Асфальт") == 0)
-            break;
-        else if (strcmp(test_type, "Грунт") == 0)
-            break;
-        else
-            printf("%s", "Некорректный ввод, повторите еще раз:");
-    }
+    input_type(test_type);
     printf("\nСреднее качество дорог с покрытием %s  "
-           "c количеством полос %ld: \n%s",
+           "c количеством полос %zu: \n%s",
            test_type, n,
            qual(all_roads, added_roads, test_type, n));
     free(all_roads);

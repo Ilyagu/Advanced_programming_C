@@ -14,18 +14,18 @@ execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
 execute_process(COMMAND ${CMAKE_COMMAND} --build .
         WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/googletest-download )
 
-# add_subdirectory(${CMAKE_BINARY_DIR}/googletest-src
-#         ${CMAKE_BINARY_DIR}/googletest-build)
+add_subdirectory(${CMAKE_BINARY_DIR}/googletest-src
+        ${CMAKE_BINARY_DIR}/googletest-build)
 
 enable_testing()
-# add_subdirectory(test)
-##
-### Test definitions ###
-##
+add_subdirectory(test)
+#
+## Test definitions ##
+#
 
-##
-### Source definitions ###
-##
+#
+## Source definitions ##
+#
 include_directories("${PROJECT_SOURCE_DIR}/include")
 
 file(GLOB sources

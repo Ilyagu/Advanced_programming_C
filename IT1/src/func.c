@@ -1,12 +1,11 @@
 // Copyright 2021 Nagdimaev Ilyagu
 
-#include "main.h"
+#include "func/func.h"
 
 #include <stdio.h>
 #include <string.h>
 
-size_t push_back(Road *all_roads, size_t new_road,
-                 size_t length, char type[100],
+size_t push_back(Road *all_roads, size_t new_road, size_t length, char type[100],
                  char quality[100], size_t lanes) {
     all_roads[new_road].length = length;
     strncpy(all_roads[new_road].type, type, strlen(type));
@@ -16,22 +15,26 @@ size_t push_back(Road *all_roads, size_t new_road,
     return new_road;
 }
 
-void print(Road *all_roads, size_t added_roads) {
-    for (size_t i = 0; i < added_roads; i++) {
-        printf("Протяженность\t\t\t\t%ld\nВид дорожного полотна\t\t%s\n"
-               "Качество покрытия\t\t\t%s\nКоличество полос\t\t\t%ld\n\n",
-               all_roads[i].length, all_roads[i].type,
-               all_roads[i].quality, all_roads[i].lanes);
-    }
-}
-
 void input_lanes(size_t *n) {
-    size_t res = scanf("%zd", n);
+    size_t res = scanf("%zu", n);
     if (!res) {
         printf("Введите корректно число дорог!");
         input_lanes(n);
     }
 }
+
+void input_type(char * test_type) {
+    while (1) {
+        scanf("%49s", test_type);
+        if (strcmp(test_type, "Асфальт") == 0)
+            break;
+        else if (strcmp(test_type, "Грунт") == 0)
+            break;
+        else
+            printf("%s", "Некорректный ввод, повторите еще раз:");
+    }
+}
+
 
 size_t find_quality(char *quality) {
     if (strcmp(quality, "Отличное") == 0)
@@ -46,7 +49,9 @@ size_t find_quality(char *quality) {
 }
 
 char *decrypt(size_t n) {
-    if (n < 60) {
+    if (n == 0) {
+        return "Таких дорог нет";
+    } else if (n < 60) {
         return "Ужасное";
     } else if (n < 71) {
         return "Плохое";
@@ -55,7 +60,7 @@ char *decrypt(size_t n) {
     } else if (n <= 100) {
         return "Отличное";
     } else {
-        printf("%zd", n);
+        printf("%zu", n);
         return "Ошибка";
     }
 }
@@ -77,6 +82,8 @@ char *qual(Road *all_roads, size_t added_roads, char *type, size_t n) {
             count++;
         }
     }
+    if (count == 0) return decrypt(0);
+    else
     return decrypt(sum / count);
 }
 
