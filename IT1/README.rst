@@ -1,6 +1,6 @@
 IT1
 ======
-.. image:: https://travis-ci.com/Ilyagu/Advanced_programming_C.svg?branch=main
+.. image:: https://travis-ci.com/Ilyagu/Advanced_programming_C.svg?branch=feachure
     :target: https://travis-ci.com/Ilyagu/Advanced_programming_C
 
 Первое индивидуальное задание по курсу "Углубленное программирование на C/C++
