@@ -9,6 +9,7 @@ compiler:
 install:
   - sudo apt-get install valgrind
   - sudo pip3 install cpplint
+  - sudo apt install cppcheck
 
 script:
   - cpplint --extensions=c include/*/* src/*
