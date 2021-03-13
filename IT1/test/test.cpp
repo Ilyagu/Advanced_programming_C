@@ -11,11 +11,23 @@ extern "C" {
 
 
 TEST(find_quality, find_quality1) {
-    ASSERT_EQ(0, find_quality("Отличное"));
-    ASSERT_EQ(20, find_quality("Хорошее"));
-    ASSERT_EQ(35, find_quality("Плохое"));
-    ASSERT_EQ(50, find_quality("Ужасное"));
-    ASSERT_EQ(200, find_quality("паылвралоыва"));
+    EXPECT_EQ(0, find_quality("Отличное"));
+}
+
+TEST(find_quality, find_quality2) {
+    EXPECT_EQ(20, find_quality("Хорошее"));
+}
+
+TEST(find_quality, find_quality3) {
+    EXPECT_EQ(35, find_quality("Плохое"));
+}
+
+TEST(find_quality, find_quality4) {
+    EXPECT_EQ(50, find_quality("Ужасное"));
+}
+
+TEST(find_quality, find_quality5) {
+    EXPECT_EQ(200, find_quality("паылвралоыва"));
 }
 
 //
