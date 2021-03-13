@@ -46,7 +46,7 @@ extern "C" {
 
 // test find_quality
 
-TEST(find_quality, correct_searching1) {
+TEST(find_quality, find_quality) {
     ASSERT_EQ(0, find_quality("Отличное"));
     ASSERT_EQ(20, find_quality("Хорошее"));
     ASSERT_EQ(35, find_quality("Плохое"));
