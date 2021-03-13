@@ -16,7 +16,7 @@ typedef struct Road {
 
 size_t load_data(Road * all_roads);
 char * decrypt(size_t n);
-void input_lanes(size_t* n);
+void input_lanes(size_t *n);
 void input_type(char * str);
 size_t find_quality(char * quality);
 char * qual(Road * all_roads, size_t added_roads, char * type, size_t n);

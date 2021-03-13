@@ -15,15 +15,21 @@ size_t push_back(Road *all_roads, size_t new_road, size_t length, char type[100]
     return new_road;
 }
 
-void input_lanes(size_t *n) {
-    size_t res = scanf("%zu", n);
+void input_lanes(size_t * n) {
+    int res = scanf("%zu", n);
     if (!res) {
-        printf("Введите корректно число дорог!");
+        printf("Введите корректно число дорог!:\n");
+        input_lanes(n);
+    }
+    if (*n > 50) {
+        printf("Нет существует количества полос!\n"
+               "Введите корректно число дорог!:\n");
         input_lanes(n);
     }
 }
 
 void input_type(char * test_type) {
+    printf("%s\n", "Введите вид покрытия (Асфальт или Грунт):");
     while (1) {
         scanf("%49s", test_type);
         if (strcmp(test_type, "Асфальт") == 0)
@@ -48,7 +54,7 @@ size_t find_quality(char *quality) {
     return 200;
 }
 
-char *decrypt(size_t n) {
+char * decrypt(size_t n) {
     if (n == 0) {
         return "Таких дорог нет";
     } else if (n < 60) {
@@ -61,7 +67,7 @@ char *decrypt(size_t n) {
         return "Отличное";
     } else {
         printf("%zu", n);
-        return "Ошибка";
+        return "ERROR";
     }
 }
 

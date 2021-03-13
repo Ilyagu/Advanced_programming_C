@@ -12,15 +12,17 @@ int main() {
     size_t added_roads;
     added_roads = load_data(all_roads);
     size_t n;
-    printf("%s\n", "Введите количество дорог");
+    printf("Введите число дорог:\n");
     input_lanes(&n);
-    printf("%s\n", "Введите вид покрытия (Асфальт или Грунт):");
     char test_type[50];
     input_type(test_type);
-    printf("\nСреднее качество дорог с покрытием %s  "
+    char* result = qual(all_roads, added_roads, test_type, n);
+    if (strcmp(result, "Таких дорог нет") == 0 || strcmp(result, "ERROR") == 0)
+        printf("%s", result);
+    else
+        printf("\nСреднее качество дорог с покрытием %s  "
            "c количеством полос %zu: \n%s",
-           test_type, n,
-           qual(all_roads, added_roads, test_type, n));
+           test_type, n, result);
     free(all_roads);
     return 0;
 }
