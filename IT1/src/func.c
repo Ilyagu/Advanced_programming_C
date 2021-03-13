@@ -73,18 +73,11 @@ char * decrypt(size_t n) {
 
 char *qual(Road *all_roads, size_t added_roads, char *type, size_t n) {
     size_t sum = 0;
-    size_t type_q = 0;
     size_t count = 0;
-    if (strcmp(type, "Асфальт") == 0)
-        type_q = 100;
-    else if (strcmp(type, "Грунт") == 0)
-        type_q = 100;
-    else
-        return 0;
     for (size_t i = 0; i < added_roads; i++) {
         if ((all_roads[i].lanes == n) &&
             (strcmp(all_roads[i].type, type) == 0)) {
-            sum = sum + type_q - find_quality(all_roads[i].quality);
+            sum = sum + 100 - find_quality(all_roads[i].quality);
             count++;
         }
     }
@@ -113,5 +106,7 @@ size_t load_data(Road * all_roads) {
                             600, "Грунт\0", "Ужасное\0", 1);
     added_roads = push_back(all_roads, added_roads,
                             100, "Асфальт\0", "Ужасное\0", 5);
+    added_roads = push_back(all_roads, added_roads,
+                            30, "Грунт\0", "Ужасное\0", 1);
     return added_roads;
 }
