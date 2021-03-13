@@ -6,10 +6,10 @@ language: c
 compiler:
   - gcc
 
-#before_install:
-#  - composer self-update
-#  - composer install --no-interaction --optimize-autoloader
-#  - composer config -g github-oauth.github.com 1bb5e3ab8b186b9cc189bb6fad0a8f800b1568bb
+before_install:
+  - composer self-update
+  - composer install --no-interaction --optimize-autoloader
+  - composer config -g github-oauth.github.com 1bb5e3ab8b186b9cc189bb6fad0a8f800b1568bb
 
 install:
   - sudo apt-get install valgrind
