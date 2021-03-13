@@ -4,7 +4,7 @@ IT1
     :target: https://travis-ci.com/Ilyagu/Advanced_programming_C
 
 .. image:: https://codecov.io/gh/Ilyagu/Advanced_programming_C/branch/main/graph/badge.svg?token=5DZTO29RU4
-:target: https://codecov.io/gh/Ilyagu/Advanced_programming_C
+    :target: https://codecov.io/gh/Ilyagu/Advanced_programming_C
 
 Первое индивидуальное задание по курсу "Углубленное программирование на C/C++
 -----------------------------------------------------------------------------
