@@ -21,7 +21,7 @@ int main() {
         printf("%s\n", result);
     else
         printf("\nСреднее качество дорог с покрытием %s  "
-           "c количеством полос %zu: \n%s",
+           "c количеством полос %zu: \n%s\n",
            test_type, n, result);
     free(all_roads);
     return 0;
