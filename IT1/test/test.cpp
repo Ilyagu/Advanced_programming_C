@@ -159,7 +159,7 @@ TEST_F(TestQual, qual3) {
 // test push_back
 //
 //
-//class TestPushBack : public ::testing::Test {
+// class TestPushBack : public ::testing::Test {
 // protected:
 //    void SetUp() {
 //        test_result = new char*[4];
@@ -196,18 +196,18 @@ TEST_F(TestQual, qual3) {
 //    char **test_result;
 //    Road * all_roads;
 //    size_t added_roads;
-//};
+// };
 //
-//TEST_F(TestPushBack, push_back1) {
+// TEST_F(TestPushBack, push_back1) {
 //    EXPECT_EQ(100, all_roads[0].length);
 //    EXPECT_STREQ("Асфальт\0", all_roads[0].type);
 //    EXPECT_STREQ("Отличное\0", all_roads[0].quality);
 //    EXPECT_EQ(3, all_roads[0].lanes);
 //}
 //
-//TEST_F(TestPushBack, push_back2) {
+// TEST_F(TestPushBack, push_back2) {
 //    EXPECT_EQ(200, all_roads[1].length);
 //    EXPECT_STREQ("Грунт\0", all_roads[1].type);
 //    EXPECT_STREQ("Ужасное\0", all_roads[1].quality);
 //    EXPECT_EQ(5, all_roads[1].lanes);
-//}
+// }
