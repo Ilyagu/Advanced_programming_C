@@ -1,3 +1,7 @@
+# Directpries
+.idea/
+.IT1/cmake-build-debug/*
+
 # Prerequisites
 *.d
 
@@ -38,11 +42,10 @@
 
 # Debug files
 *.dSYM/
-.idea/
-.IT1/cmake-build-debug/
 *.su
 *.idb
 *.pdb
+*.swp
 
 # Kernel Module Compile Results
 *.mod*
