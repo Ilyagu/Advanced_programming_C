@@ -203,7 +203,7 @@ TEST_F(TestQual, qual3) {
 //    EXPECT_STREQ("Асфальт\0", all_roads[0].type);
 //    EXPECT_STREQ("Отличное\0", all_roads[0].quality);
 //    EXPECT_EQ(3, all_roads[0].lanes);
-//}
+// }
 //
 // TEST_F(TestPushBack, push_back2) {
 //    EXPECT_EQ(200, all_roads[1].length);
