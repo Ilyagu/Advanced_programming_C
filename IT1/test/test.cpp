@@ -10,7 +10,7 @@ extern "C" {
 }
 
 class FindQuality : public ::testing::Test {
-protected:
+ protected:
     void SetUp() {
         test_result = new char*[5];
         for (int i = 0; i < 5; i++) {
@@ -22,7 +22,6 @@ protected:
         strncpy(test_result[2], "Плохое", 100);
         strncpy(test_result[3], "Ужасное", 100);
         strncpy(test_result[4], "Фейк", 100);
-
     }
     void TearDown() {
         for (int i = 0; i < 5; i++) {
@@ -87,7 +86,7 @@ TEST(decrypt, decrypt6) {
 //
 
 class TestQual : public ::testing::Test {
-protected:
+ protected:
     void SetUp() {
         test_result = new char*[6];
         for (int i = 0; i < 6; i++) {
@@ -160,55 +159,55 @@ TEST_F(TestQual, qual3) {
 // test push_back
 //
 
-//class TestPushBack : public ::testing::Test {
-//protected:
-//    void SetUp() {
-//        test_result = new char*[4];
-//        for (int i = 0; i < 4; i++) {
-//            test_result[i] = new char[100];
-//        }
-//
-//        strncpy(test_result[0], "Асфальт\0", 100);
-//        strncpy(test_result[1], "Отличное\0", 100);
-//        strncpy(test_result[2], "Грунт\0", 100);
-//        strncpy(test_result[3], "Ужасное\0", 100);
-//
-//        all_roads = reinterpret_cast<Road *>(malloc(sizeof(Road) * 10));
-//
-//        added_roads = push_back(all_roads, 0,
-//                                       100,
-//                                test_result[0],
-//                                test_result[1],
-//                                       3);
-//
-//        added_roads = push_back(all_roads, added_roads,
-//                                200,
-//                                test_result[2],
-//                                test_result[3],
-//                                5);
-//    }
-//    void TearDown() {
-//        free(all_roads);
-//        for (int i = 0; i < 4; i++) {
-//            delete []test_result[i];
-//        }
-//        delete []test_result;
-//    }
-//    char **test_result;
-//    Road * all_roads;
-//    size_t added_roads;
-//};
-//
-//TEST_F(TestPushBack, push_back1) {
-//    EXPECT_EQ(100, all_roads[0].length);
-//    EXPECT_STREQ("Асфальт\0", all_roads[0].type);
-//    EXPECT_STREQ("Отличное\0", all_roads[0].quality);
-//    EXPECT_EQ(3, all_roads[0].lanes);
-//}
-//
-//TEST_F(TestPushBack, push_back2) {
-//    EXPECT_EQ(200, all_roads[1].length);
-//    EXPECT_STREQ("Грунт\0", all_roads[1].type);
-//    EXPECT_STREQ("Ужасное\0", all_roads[1].quality);
-//    EXPECT_EQ(5, all_roads[1].lanes);
-//}
+class TestPushBack : public ::testing::Test {
+ protected:
+    void SetUp() {
+        test_result = new char*[4];
+        for (int i = 0; i < 4; i++) {
+            test_result[i] = new char[100];
+        }
+
+        strncpy(test_result[0], "Асфальт\0", 100);
+        strncpy(test_result[1], "Отличное\0", 100);
+        strncpy(test_result[2], "Грунт\0", 100);
+        strncpy(test_result[3], "Ужасное\0", 100);
+
+        all_roads = reinterpret_cast<Road *>(malloc(sizeof(Road) * 10));
+
+        added_roads = push_back(all_roads, 0,
+                                       100,
+                                test_result[0],
+                                test_result[1],
+                                       3);
+
+        added_roads = push_back(all_roads, added_roads,
+                                200,
+                                test_result[2],
+                                test_result[3],
+                                5);
+    }
+    void TearDown() {
+        free(all_roads);
+        for (int i = 0; i < 4; i++) {
+            delete []test_result[i];
+        }
+        delete []test_result;
+    }
+    char **test_result;
+    Road * all_roads;
+    size_t added_roads;
+};
+
+TEST_F(TestPushBack, push_back1) {
+    EXPECT_EQ(100, all_roads[0].length);
+    EXPECT_STREQ("Асфальт\0", all_roads[0].type);
+    EXPECT_STREQ("Отличное\0", all_roads[0].quality);
+    EXPECT_EQ(3, all_roads[0].lanes);
+}
+
+TEST_F(TestPushBack, push_back2) {
+    EXPECT_EQ(200, all_roads[1].length);
+    EXPECT_STREQ("Грунт\0", all_roads[1].type);
+    EXPECT_STREQ("Ужасное\0", all_roads[1].quality);
+    EXPECT_EQ(5, all_roads[1].lanes);
+}
